@@ -6,6 +6,6 @@ follower count, and profile URL.
 
 ## How to run
 
-python github_lookup.py
+```python github_lookup.py```
 
 Then enter a GitHub username when prompted.
