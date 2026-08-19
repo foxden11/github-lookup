@@ -1,8 +1,8 @@
 # GitHub Lookup
 
-A small Python script that fetches a GitHub user's public profile
-using the GitHub API and prints their name, location, repo count,
-and follower count.
+A Python script that fetches a GitHub user's public profile via the
+GitHub API and prints their name, location, repository count,
+follower count, and profile URL.
 
 ## How to run
 
