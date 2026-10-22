@@ -1,19 +1,29 @@
 import requests
 
 username = input("GitHub username: ")
-response = requests.get("https://api.github.com/users/" + username)
-data = response.json()
 
-if data["name"] == None:
-    print("No name listed")
-else:
-    print(data["name"])
+try:
+    response = requests.get("https://api.github.com/users/" + username)
+    data = response.json()
 
-if data["location"] == None:
-    print("No location listed")
-else:
-    print(data["location"])
+    if "name" in data:
 
-print("Repos:", data["public_repos"])
-print("Followers:", data["followers"])
-print("Profile:", data["html_url"])
+        if data["name"] is None:
+            print("No name listed")
+        else:
+            print(data["name"])
+
+        if data["location"] is None:
+            print("No location listed")
+        else:
+            print(data["location"])
+
+        print("Repos:", data["public_repos"])
+        print("Followers:", data["followers"])
+        print("Profile:", data["html_url"])
+
+    else:
+        print("User not found")
+
+except requests.exceptions.RequestException as e:
+    print("Network problem:", e)
