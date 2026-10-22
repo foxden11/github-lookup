@@ -3,6 +3,7 @@
 A Python script that fetches a GitHub user's public profile via the
 GitHub API and prints their name, location, repository count,
 follower count, and profile URL.
+Handles network failures and usernames that don't exist.
 
 ## How to run
 
